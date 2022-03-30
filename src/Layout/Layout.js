@@ -9,7 +9,7 @@ const Layout = (props) => {
             <header>
                 <Header />
             </header>
-            <main>
+            <main className={css.Body}>
                 {props.children}
             </main>
         </React.Fragment>
