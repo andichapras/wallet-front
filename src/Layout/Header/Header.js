@@ -28,12 +28,17 @@ const Header = () => {
                     'Content-Type': 'application/json'
                 }
             )
+            window.location.reload()
         } catch (err) {}
         setModalTambah(!modalTambah)
     }
 
     const buttonTambahHandler = () => {
         setModalTambah(true)
+    }
+
+    const closeModalTambah = () => {
+        setModalTambah(false)
     }
 
     const changeInputNama = (e) => {
@@ -80,7 +85,7 @@ const Header = () => {
             }
 
             {modalTambah && 
-                <Modal>
+                <Modal show={modalTambah} onHide={closeModalTambah}>
                     <Form onSubmit={(e) => tambahWalletHandler(e)}>
                         <Modal.Header>
                             <Modal.Title>Tambah User Wallet</Modal.Title>
